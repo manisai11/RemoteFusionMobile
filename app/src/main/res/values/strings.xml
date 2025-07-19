@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">RemoteFusionMobile</string>
+    <string name="accessibility_service_description">Touch Simulation Service</string>
 </resources>

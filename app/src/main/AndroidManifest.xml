@@ -2,13 +2,19 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Permissions -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE"/>
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
-    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
+
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -19,8 +25,14 @@
         android:theme="@style/Theme.RemoteFusionMobile"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+
+        <!-- Control Mode Selection as Launcher -->
+        <activity android:name=".DeviceDiscoveryActivity" />
+        <activity android:name=".RemoteControlActivity" />
+
         <activity
-            android:name=".MainActivity"
+            android:name=".ControlSelectionActivity"
+
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.RemoteFusionMobile">
@@ -29,18 +41,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service
 
+        <!-- MainActivity -->
+        <activity android:name=".MainActivity" />
+
+        <!-- Accessibility Service -->
+        <service
             android:name=".TouchAccessibilityService"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
-            android:exported="true">
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.accessibilityservice.AccessibilityService" />
             </intent-filter>
-
             <meta-data
                 android:name="android.accessibilityservice"
-                android:resource="@xml/accessibility_service_config" />
+                android:resource="@xml/accessibility_service_config"/>
         </service>
     </application>
-</manifest>  <!-- Corrected closing tag -->
+</manifest>

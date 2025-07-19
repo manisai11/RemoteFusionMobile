@@ -48,8 +48,9 @@ class MyWebSocketServer(
  * and communicate with the server.
  */
 class MobileWebSocketManager {
+
     private var server: MyWebSocketServer? = null
-    private val port = 33600
+    private val port = 33700
     private var touchService: TouchAccessibilityService? = null
 
     fun setTouchService(service: TouchAccessibilityService) {

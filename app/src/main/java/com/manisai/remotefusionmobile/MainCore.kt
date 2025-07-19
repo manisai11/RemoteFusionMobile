@@ -33,6 +33,10 @@ object MainCore {
 
     // --- Public Functions for the UI to call ---
 
+    fun sendMouseScroll(scrollAmount: Int) {
+        webSocket?.send("mouse_scroll:$scrollAmount")
+    }
+
     fun connect() {
         if (_connectionState.value == ConnectionState.CONNECTING || _connectionState.value == ConnectionState.CONNECTED) {
             return

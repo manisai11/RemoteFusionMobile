@@ -33,26 +33,13 @@ class ControlSelectionActivity : AppCompatActivity() {
 
             when (selectedMode) {
                 "Mobile to PC" -> {
-                    val intent = Intent(this, MainActivity::class.java)
+                    val intent = Intent(this, DeviceDiscoveryActivity::class.java)
                     startActivity(intent)
                 }
                 "PC to Mobile" -> {
-                    Toast.makeText(this, "Starting WebSocket Server...", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
 
-                    // Start server in background thread
-                    CoroutineScope(Dispatchers.IO).launch {
-                        try {
-                            val server = MobileWebSocketManager()
-                            server.startServer { log ->
-                                Log.d("WebSocketServer", log)
-                            }
-
-                        } catch (e: Exception) {
-                            runOnUiThread {
-                                Toast.makeText(this@ControlSelectionActivity, "Server error: ${e.message}", Toast.LENGTH_LONG).show()
-                            }
-                        }
-                    }
                 }
             }
         }

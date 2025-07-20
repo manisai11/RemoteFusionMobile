@@ -1,3 +1,5 @@
+//[BOTH GATEWAY AT START] GUIDES TO M2PC OR PC2M
+
 package com.manisai.remotefusionmobile
 
 

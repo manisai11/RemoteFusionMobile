@@ -1,3 +1,5 @@
+//[MOBILE TO PC] AFTER SELECTING A DEVICE FROM DEVICE LIST ESTABLISHES CONNECTION
+
 package com.manisai.remotefusionmobile
 
 import kotlinx.coroutines.flow.MutableStateFlow

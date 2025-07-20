@@ -1,3 +1,5 @@
+//[MOBILE TO PC] STORES DISCOVERED DEVICES' INFO
+
 package com.manisai.remotefusionmobile
 
 data class DiscoveredDevice(

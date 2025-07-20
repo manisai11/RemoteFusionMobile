@@ -1,3 +1,5 @@
+//[MOBILE TO PC] DISCOVERS AVAILABLE DEVICES AND SHOWS
+
 package com.manisai.remotefusionmobile
 
 import android.content.Intent

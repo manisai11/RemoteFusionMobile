@@ -1,45 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <Button
-        android:id="@+id/btnStart"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Start Server" />
-
-    <Button
-        android:id="@+id/btnDiscover"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Discover Devices" />
-
-    <Button
-        android:id="@+id/btnStop"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Stop Server"
-        android:layout_marginTop="8dp"/>
-
-    <Button
-        android:id="@+id/btnAccessibility"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Open Accessibility Settings"
-        android:layout_marginTop="8dp"/>
+    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/textLog"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:textSize="14sp"
-        android:scrollbars="vertical"
-        android:background="#EEEEEE"
+        android:background="#E0E0E0"
         android:padding="8dp"
-        android:text="Log output..." />
+        android:scrollbars="vertical"
+        android:text="Server Log:\n"
+        android:textColor="@android:color/black" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Server Status: "
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <Switch
+            android:id="@+id/switchServerStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOff="OFF"
+            android:textOn="ON"
+            android:thumbTextPadding="12dp"
+            android:showText="true"
+            android:textSize="18sp"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnAccessibility"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Open Accessibility Settings"
+        android:layout_marginBottom="8dp"/>
+
 </LinearLayout>

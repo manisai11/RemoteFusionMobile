@@ -143,8 +143,14 @@ class MobileWebSocketManager {
                     onLog("⌨️ Executing key code: $keyCode")
                     touchServiceInstance.pressKey(keyCode)
                 }
+                "TEXT" -> {
+                    val text = data.getString("text")
+                    onLog("🔤 Typing text: $text")
+                    touchServiceInstance.inputText(text)
+                }
                 else -> onLog("❓ Unknown command type: '$type'")
             }
+
         } catch (e: Exception) {
             onLog("❌ Error parsing message: ${e.message}")
         }

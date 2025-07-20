@@ -129,4 +129,20 @@ class TouchAccessibilityService : AccessibilityService() {
             }
         }
     }
+    fun inputText(text: String) {
+        val arguments = Bundle()
+        arguments.putCharSequence(AccessibilityNodeInfo.ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE, text)
+
+        val rootNode = rootInActiveWindow
+        if (rootNode != null) {
+            val focusedNode = rootNode.findFocus(AccessibilityNodeInfo.FOCUS_INPUT)
+            if (focusedNode != null && focusedNode.isEditable) {
+                focusedNode.performAction(AccessibilityNodeInfo.ACTION_SET_TEXT, arguments)
+            } else {
+                Log.e("TouchService", "No editable field in focus.")
+            }
+        } else {
+            Log.e("TouchService", "Root window is null.")
+        }
+    }
 }

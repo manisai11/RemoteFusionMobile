@@ -4,10 +4,10 @@
     <selectionStates>
       <SelectionState runConfigName="RemoteFusion">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2025-07-20T03:11:22.324486900Z">
+        <DropdownSelection timestamp="2025-07-20T12:43:34.371248300Z">
           <Target type="DEFAULT_BOOT">
             <handle>
-              <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\manis\.android\avd\Medium_Phone_2.avd" />
+              <DeviceId pluginId="PhysicalDevice" identifier="serial=49X8EMPVHACQIJRS" />
             </handle>
           </Target>
         </DropdownSelection>
